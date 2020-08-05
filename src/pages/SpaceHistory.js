@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchHistory } from "../redux/slices/history";
 import { Collapse } from "antd";
 
 const { Panel } = Collapse;
-function callback(key) {
-  console.log(key);
-}
 
 const text = `
   A dog is a type of domesticated animal.
@@ -13,6 +12,10 @@ const text = `
 `;
 
 export default function SpaceHistory() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchHistory());
+  }, []);
   return (
     <div>
       Space History
