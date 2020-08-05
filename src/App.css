@@ -3,5 +3,11 @@
   text-align: center;
   font-family: "Roboto";
   max-width: 100vw;
-  max-height: 100vh;
+  height: 100vh;
+}
+.content {
+  padding: 20px 50px;
+}
+.footer {
+  text-align: center;
 }
