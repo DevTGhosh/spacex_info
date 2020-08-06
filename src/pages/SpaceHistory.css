@@ -1,0 +1,13 @@
+.space-history {
+  width: 70%;
+  font-size: 2rem;
+}
+
+.links {
+  float: right;
+}
+.link-img {
+  width: 40px;
+  height: 40px;
+  margin: 0.5rem;
+}
