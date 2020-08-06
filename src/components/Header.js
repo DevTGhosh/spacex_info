@@ -7,7 +7,7 @@ const { Header } = Layout;
 
 export default function Navbar() {
   return (
-    <Header>
+    <Header className="header">
       <img src={logo} alt="Logo" className="logo" />
       <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
         <Menu.Item key="1">SpaceX History</Menu.Item>
