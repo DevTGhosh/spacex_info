@@ -1,6 +1,7 @@
 import React from "react";
 import "fontsource-roboto";
 import { Layout } from "antd";
+import "antd/dist/antd.dark.css";
 import SpaceHistory from "./pages/SpaceHistory";
 import Header from "./components/Header";
 import "./App.css";
