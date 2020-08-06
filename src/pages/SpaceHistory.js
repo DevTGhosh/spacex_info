@@ -70,14 +70,18 @@ export default function SpaceHistory() {
 
   useEffect(() => {
     dispatch(fetchHistory());
-  }, []);
+  }, [dispatch]);
   const onChange = (page) => {
     setCurrentPage(page);
   };
   return (
     <div className="space-history">
       <h1>SpaceX History</h1>
-      <Collapse defaultActiveKey={["1"]} accordion={true} className="collapse">
+      <Collapse
+        defaultActiveKey={["1"]}
+        accordion={true}
+        className="collapse-accordian"
+      >
         {displayPanel(history.data, currentPage, pageSize)}
       </Collapse>
       <Pagination

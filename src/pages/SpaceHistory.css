@@ -2,7 +2,9 @@
   width: 70%;
   font-size: 2rem;
 }
-
+.collapse-accordian {
+  font-size: 1rem;
+}
 .links {
   float: right;
 }
