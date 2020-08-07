@@ -27,6 +27,7 @@ const payloadSlice = createSlice({
         //Adding unique id to each payload
         action.payload.map((item) => {
           item.id = uuid();
+          return null;
         });
         state.data.push(...action.payload);
         state.isLoading = false;
