@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getPayload } from "../../api/getSpaceXApi";
+import uuid from "../../utils/uuid";
 
 const payloadInitialState = {
   data: [],
@@ -23,6 +24,10 @@ const payloadSlice = createSlice({
     getPayloadStart: startLoading,
     getPayloadSuccess: {
       reducer(state, action) {
+        //Adding unique id to each payload
+        action.payload.map((item) => {
+          item.id = uuid();
+        });
         state.data.push(...action.payload);
         state.isLoading = false;
         state.error = null;
