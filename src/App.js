@@ -1,25 +1,9 @@
 import React from "react";
-import "fontsource-roboto";
-import { Layout } from "antd";
-import "antd/dist/antd.dark.css";
-import SpaceHistory from "./pages/SpaceHistory";
-import Header from "./components/Header";
 import "./App.css";
-
-const { Content, Footer } = Layout;
+import SpaceHistory from "./pages/SpaceHistory";
 
 function App() {
-  return (
-    <Layout className="layout">
-      <Header />
-      <Content className="content">
-        <SpaceHistory />
-      </Content>
-      <Footer className="footer">
-        SpaceX Info ©2020 Created by Devjyoti Ghosh
-      </Footer>
-    </Layout>
-  );
+  return <SpaceHistory />;
 }
 
 export default App;

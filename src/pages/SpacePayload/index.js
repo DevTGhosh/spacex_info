@@ -4,6 +4,7 @@ import {
   fetchPayload,
   changePayloadActiveTabKey,
 } from "../../redux/slices/payload";
+import Layout from "../../components/Layout";
 import Card from "../../components/Card";
 import Pagination from "../../components/Pagination";
 import Loading from "../../components/Loading";
@@ -16,32 +17,36 @@ export default function SpacePayload() {
   const [pageSize] = useState(3);
 
   useEffect(() => {
-    dispatch(fetchPayload());
-  }, [dispatch]);
+    if (payload.data.length === 0) {
+      dispatch(fetchPayload());
+    }
+  }, [dispatch, payload.data.length]);
 
   return (
-    <div className="space-payload">
-      <h1 className="heading">SpaceX Payloads</h1>
-      {payload.isLoading ? (
-        <Loading />
-      ) : (
-        <>
-          <Card
-            data={payload.data}
-            currentPage={currentPage}
-            pageSize={pageSize}
-            dispatch={dispatch}
-            changePayloadActiveTabKey={changePayloadActiveTabKey}
-          />
-          <div className="pagination">
-            <Pagination
+    <Layout>
+      <div className="space-payload">
+        <h1 className="heading">SpaceX Payloads</h1>
+        {payload.isLoading ? (
+          <Loading />
+        ) : (
+          <>
+            <Card
+              data={payload.data}
+              currentPage={currentPage}
               pageSize={pageSize}
-              length={payload.data.length}
-              setCurrentPage={setCurrentPage}
+              dispatch={dispatch}
+              changePayloadActiveTabKey={changePayloadActiveTabKey}
             />
-          </div>
-        </>
-      )}
-    </div>
+            <div className="pagination">
+              <Pagination
+                pageSize={pageSize}
+                length={payload.data.length}
+                setCurrentPage={setCurrentPage}
+              />
+            </div>
+          </>
+        )}
+      </div>
+    </Layout>
   );
 }
