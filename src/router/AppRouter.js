@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SpaceHistory from "../pages/SpaceHistory";
 import SpacePayload from "../pages/SpacePayload";
+import NotFound from "../pages/NotFound";
 
 export default function AppRouter() {
   return (
@@ -12,6 +13,9 @@ export default function AppRouter() {
         </Route>
         <Route exact path="/payloads">
           <SpacePayload />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </Router>
