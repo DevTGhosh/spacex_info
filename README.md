@@ -1,4 +1,6 @@
-Web app for displaying SpaceX api made with React, Redux and Firebase
+Web app for displaying SpaceX api made with React, Redux and Antd.
+
+Website is hosted on Firebase at [https://spacex-info-c9c45.web.app](https://spacex-info-c9c45.web.app)
 
 ## Available Scripts
 
