@@ -1,0 +1,5 @@
+.spin {
+  grid-column-start: span 3;
+  justify-self: center;
+  align-self: center;
+}
