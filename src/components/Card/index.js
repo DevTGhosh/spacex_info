@@ -83,6 +83,7 @@ export default function displayCard({
         tabList={getTabList(id)}
         defaultActiveTabKey={defaultKey}
         activeTabKey={item.activeTabKey}
+        hoverable
         onTabChange={(key) => {
           onTabChange(key, dispatch, changePayloadActiveTabKey);
         }}
