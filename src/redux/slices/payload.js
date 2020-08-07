@@ -24,9 +24,10 @@ const payloadSlice = createSlice({
     getPayloadStart: startLoading,
     getPayloadSuccess: {
       reducer(state, action) {
-        //Adding unique id to each payload
+        //Adding unique id to each payload & setting activeTabKey on it
         action.payload.map((item) => {
           item.id = uuid();
+          item.activeTabKey = item.id + "1";
           return null;
         });
         state.data.push(...action.payload);
@@ -35,6 +36,15 @@ const payloadSlice = createSlice({
       },
     },
     getPayloadFailure: loadingFailed,
+    changePayloadActiveTabKey: (state, action) => {
+      const id = action.payload.slice(0, action.payload.length - 1);
+      state.data.map((item) => {
+        if (item.id === id) {
+          item.activeTabKey = action.payload;
+        }
+        return null;
+      });
+    },
   },
 });
 
@@ -42,6 +52,7 @@ export const {
   getPayloadStart,
   getPayloadSuccess,
   getPayloadFailure,
+  changePayloadActiveTabKey,
 } = payloadSlice.actions;
 
 export default payloadSlice.reducer;
@@ -55,3 +66,7 @@ export const fetchPayload = () => async (dispatch) => {
     dispatch(getPayloadFailure(err.toString()));
   }
 };
+
+// export const changeActiveTabKey = (key, dispatch) => {
+//   dispatch(changePayloadActiveTabKey(key));
+// };
