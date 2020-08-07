@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Menu } from "antd";
-import logo from "../assets/rocket.png";
+import logo from "../../assets/rocket.png";
 import "./Header.css";
 
 const { Header } = Layout;
