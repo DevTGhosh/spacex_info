@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchHistory } from "../../redux/slices/history";
 import Pagination from "../../components/Pagination";
-import Panel from "../../components/Panel";
+import Accordian from "../../components/Accordian";
 import "./SpaceHistory.css";
 
 export default function SpaceHistory() {
@@ -18,7 +18,7 @@ export default function SpaceHistory() {
   return (
     <div className="space-history">
       <h1>SpaceX History</h1>
-      <Panel
+      <Accordian
         data={history.data}
         currentPage={currentPage}
         pageSize={pageSize}

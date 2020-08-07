@@ -3,7 +3,7 @@ import { Collapse } from "antd";
 import reddit from "../../assets/reddit.png";
 import article from "../../assets/link.png";
 import wikipedia from "../../assets/wikipedia.png";
-import "./Panel.css";
+import "./Accordian.css";
 
 const { Panel } = Collapse;
 
