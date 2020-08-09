@@ -8,6 +8,7 @@ import Layout from "../../components/Layout";
 import Card from "../../components/Card";
 import Pagination from "../../components/Pagination";
 import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 import "./SpacePayload.css";
 
 export default function SpacePayload() {
@@ -26,8 +27,12 @@ export default function SpacePayload() {
     <Layout>
       <div className="space-payload">
         <h1 className="heading">SpaceX Payloads</h1>
+        {/* Checks first if Loading is true then checks if Api call returns error
+        and then finally returns Card if everyting is fine */}
         {payload.isLoading ? (
           <Loading />
+        ) : payload.error ? (
+          <Error errorMessage={payload.error} />
         ) : (
           <>
             <Card

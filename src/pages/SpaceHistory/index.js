@@ -5,6 +5,7 @@ import Layout from "../../components/Layout";
 import Pagination from "../../components/Pagination";
 import Accordian from "../../components/Accordian";
 import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 import "./SpaceHistory.css";
 
 export default function SpaceHistory() {
@@ -23,8 +24,12 @@ export default function SpaceHistory() {
     <Layout>
       <div className="space-history">
         <h1>SpaceX History</h1>
+        {/* Checks first if Loading is true then checks if Api call returns error
+        and then finally returns Accordian if everyting is fine */}
         {history.isLoading ? (
           <Loading />
+        ) : history.error ? (
+          <Error errorMessage={history.error} />
         ) : (
           <>
             <Accordian
