@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "antd";
+import { useDispatch } from "react-redux";
 
 const getTabList = (id) => {
   const key1 = id + "1";
@@ -63,13 +64,13 @@ const displayCardData = (data) => {
   return cardDetails[data.activeTabKey];
 };
 
-export default function displayCard({
+export default function DisplayCard({
   data,
   currentPage,
   pageSize,
-  dispatch,
   changePayloadActiveTabKey,
 }) {
+  const dispatch = useDispatch();
   const startingIndex = (currentPage - 1) * pageSize;
   const endingIndex = startingIndex + pageSize;
   const slicedData = data.slice(startingIndex, endingIndex);

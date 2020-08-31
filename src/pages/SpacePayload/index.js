@@ -39,7 +39,6 @@ export default function SpacePayload() {
               data={payload.data}
               currentPage={currentPage}
               pageSize={pageSize}
-              dispatch={dispatch}
               changePayloadActiveTabKey={changePayloadActiveTabKey}
             />
             <div className="pagination">
